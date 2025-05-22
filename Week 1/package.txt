@@ -1,0 +1,23 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+--A package declaration is used to store a set of common declarations, such as components.
+--These declarations can then be imported into other design units using a use clause.
+
+package Gates is
+  component NAND_2 is
+   port (A, B: in std_logic; Y: out std_logic);
+  end component NAND_2;
+end package Gates;
+
+  
+library ieee;
+use ieee.std_logic_1164.all;
+entity NAND_2 is
+   port (A, B: in std_logic; Y: out std_logic);
+end entity NAND_2;
+
+architecture Equations of NAND_2 is
+begin
+   Y <= not (A and B);
+end Equations;
